@@ -10,11 +10,11 @@ $files.each | $file | {
   }
 
   case $file_type {
-    'directory' => { $file_mode = '0755' }
-    'file'  => { $file_mode = '0644' }
+    'directory' : { $file_mode = '0755' }
+    'file'  : { $file_mode = '0644' }
   }
 
-  file { "/tmp/$ffile":
+  file { "/tmp/$file":
     ensure => $file_type,
     owner  => 'root',
     group  => 'root',
